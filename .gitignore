@@ -1,0 +1,57 @@
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Python cache and temporary files
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+# Python packaging metadata
+*.egg-info/
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+
+# Local IDE settings
+.vscode/
+.idea/
+
+# Downloaded embedding models and Hugging Face cache
+models/
+
+# Original PDF articles
+data/raw_pdfs/*
+!data/raw_pdfs/.gitkeep
+
+# Extracted article text and parsing reports
+data/processed/*
+!data/processed/.gitkeep
+
+# Generated chunks
+data/chunks/*
+!data/chunks/.gitkeep
+
+# FAISS index, metadata, reports, and checkpoints
+data/faiss_index/*
+!data/faiss_index/.gitkeep
+
+# Logs and temporary files
+*.log
+*.tmp
+temp/
+tmp/
+
+# Operating-system files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Streamlit private configuration
+.streamlit/secrets.toml

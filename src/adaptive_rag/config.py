@@ -1,0 +1,62 @@
+from pathlib import Path
+
+
+PROJECT_ROOT = Path(__file__).resolve().parents[2]
+
+DATA_DIR = PROJECT_ROOT / "data"
+RAW_PDF_DIR = DATA_DIR / "raw_pdfs"
+PROCESSED_DIR = DATA_DIR / "processed"
+
+PAGES_JSONL_PATH = PROCESSED_DIR / "article_pages.jsonl"
+PARSING_REPORT_PATH = PROCESSED_DIR / "parsing_report.csv"
+
+MIN_PAGE_CHARACTERS = 80
+
+CHUNKS_DIR = DATA_DIR / "chunks"
+
+CHUNKS_JSONL_PATH = CHUNKS_DIR / "article_chunks.jsonl"
+CHUNK_REPORT_PATH = CHUNKS_DIR / "chunking_report.csv"
+
+CHUNK_SIZE = 1200
+CHUNK_OVERLAP = 200
+
+MODELS_DIR = PROJECT_ROOT / "models"
+
+JINA_MODEL_PATH = MODELS_DIR / "jina-embeddings-v3"
+QWEN_MODEL_PATH = MODELS_DIR / "qwen_embedding"
+
+ACTIVE_EMBEDDING_MODEL = "qwen"
+
+EMBEDDING_DIMENSION = 1024
+EMBEDDING_BATCH_SIZE = 4
+EMBEDDING_MAX_LENGTH = 2048
+
+QWEN_MODEL_ID = "Qwen/Qwen3-Embedding-0.6B"
+HUGGINGFACE_CACHE_DIR = MODELS_DIR / "huggingface_cache"
+
+FAISS_DIR = DATA_DIR / "faiss_index"
+
+FAISS_INDEX_PATH = FAISS_DIR / "medical_expert_systems.index"
+FAISS_METADATA_PATH = FAISS_DIR / "chunk_metadata.jsonl"
+FAISS_REPORT_PATH = FAISS_DIR / "index_report.json"
+
+EMBEDDINGS_CHECKPOINT_PATH = (
+    FAISS_DIR / "embeddings_checkpoint.npy"
+)
+
+CHECKPOINT_STATE_PATH = (
+    FAISS_DIR / "checkpoint_state.json"
+)
+
+CHECKPOINT_SAVE_EVERY = 32
+
+RETRIEVAL_CANDIDATE_K = 10
+RETRIEVAL_TOP_K = 5
+
+QUERY_SHORT_MAX_WORDS = 5
+QUERY_COMPLEX_MIN_ACTIONS = 2
+QUERY_COMPLEX_MIN_CONNECTORS = 2
+
+RETRIEVAL_SCORE_THRESHOLD = 0.65
+RETRIEVAL_MIN_ACCEPTED_RESULTS = 2
+RETRIEVAL_MIN_AVERAGE_SCORE = 0.65
